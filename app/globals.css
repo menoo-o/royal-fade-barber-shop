@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Oswald:wght@200..700&display=swap');
 @import "tailwindcss";
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,15 +12,173 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* @media (prefers-color-scheme: dark) {
+  /* :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
+  } */
+
+
+  :root {
+  /* ----------------------------------------
+     COLOR SYSTEM
+  ---------------------------------------- */
+  --c-saffron: #EEC00B;          /* saffron */
+  --c-carbon: #212529;              /* carbon black */
+  --c-iron: #495057;            /* iron grey */
+  --c-snow: #F8F9FA;           /* bright snow */
+
+
+
+  /* ----------------------------------------
+     SPACING SCALE (8px baseline)
+     You can adjust the ratio if needed.
+  ---------------------------------------- */
+  /* Spacing scale (like Tailwind's) */
+  --space-0: 0rem;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-18: 5rem;    /* 64px */
+  --space-20: 6rem;    /* 64px */
+
+  /* ----------------------------------------
+     TYPOGRAPHY SCALE
+     Uses clamp() for responsiveness
+  ---------------------------------------- */
+
+  /* Font families */
+  --font-gothic: "League Gothic", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+
+  /* Font sizes */
+    --font-size-xxxl: clamp(11rem, 11vw, 13rem);    
+    --font-size-x-xxl: clamp(5.2rem, 6.7vw, 7rem);   
+    --font-size-mini-xxl: clamp(4rem, 6vw, 5.5rem);
+
+    --font-size-xxl: clamp(2.2rem, 4.5vw, 3.25rem); /* Section titles */
+    --font-size-xl: clamp(3rem, 5vw, 4rem);   /* Hero / Landing headlines */
+    --font-size-lg: clamp(2rem, 3vw, 2.5rem); /* H1 */
+    --font-size-mid: clamp(1.75rem, 2.5vw, 2.25rem); /* mid */
+    --font-size-md: clamp(1.5rem, 2vw, 2rem); /* H2 */
+    --font-size-reg: clamp(1.125rem, 1.5vw, 1.375rem); /* H3 / subtext / buttons */
+    --font-size-sm: clamp(1rem, 1.1vw, 1.125rem); /* Body */
+
+    --font-size-xs: 0.875rem;   /* captions */
+    --font-size-xxs: 0.75rem;   /* tiny labels */
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Line-height tokens */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-loose: 1.75;
+  --leading-extra: 2;
+
+  /* Letter spacing (classic look) */
+  --letter-tight: -0.02em;
+  --letter-normal: 0em;
+  --letter-wide: 0.05em;
+
+  /* ----------------------------------------
+     RADII (corner rounding)
+  ---------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-round: 999px;
+
+  /* ----------------------------------------
+     SHADOWS (subtle classic look)
+  ---------------------------------------- */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.15);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.25);
+
+  /* ----------------------------------------
+     Z-INDEX SYSTEM
+  ---------------------------------------- */
+  /* Z-Index Layers */
+  --z-base: 1;
+  --z-sticky: 10;
+  --z-dropdown: 50;
+  --z-fixed: 100; /* Navbar */
+  --z-hero: 50; /* Hero */
+  
+  --z-overlay: 1000; /* Nav Overlay */
+  --z-contact-overlay: 1150; /* Contact overlay */
+
+  /* ----------------------------------------
+     CONTAINERS
+  ---------------------------------------- */
+  --container-sm: 620px;
+  --container-md: 860px;
+  --container-lg: 1180px;
+  --container-xl: 1400px;
+
+  /* Default page container */
+  --container-padding: 20px;
+
+  /* ----------------------------------------
+     TRANSITIONS
+  ---------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ----------------------------------------
+     BORDERS
+  ---------------------------------------- */
+  --border-light: 1px solid rgba(255,255,255,0.08);
+  --border-regular: 1px solid rgba(255,255,255,0.15);
+  --border-strong: 1px solid rgba(255,255,255,0.25);
+
+  /* ----------------------------------------
+     OPACITY LEVELS
+  ---------------------------------------- */
+  --opacity-low: 0.4;
+  --opacity-medium: 0.7;
+  --opacity-high: 0.9;
+
+  /* ----------------------------------------
+     MAX WIDTHS FOR TEXT / CONTENT
+  ---------------------------------------- */
+  --max-width-text: 60ch;
+  --max-width-narrow: 45ch;
+  --max-width-wide: 75ch;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html, body {
+  background: var(--c-snow);
+  color: var(--c-carbon);
+  font-family: var(--font-gothic), serif;
+  line-height: var(--line-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+

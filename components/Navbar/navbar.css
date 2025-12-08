@@ -1,0 +1,61 @@
+/* NAVBAR DESKTOP ONLY */
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  padding: 0 var(--space-18);
+  background: var(--color-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+.nav-contain{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav Links (horizontal) */
+.navbar__links {
+  display: flex;
+  gap: var(--space-7);
+  list-style: none;
+}
+
+.navbar__links li a {
+  font-size: var(--font-size-sm);
+  color: var(--c-iron);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-tight);
+  padding: var(--space-1) var(--space-2);
+  transition: color var(--transition-normal);
+}
+
+.navbar__links li a:hover {
+  color: var(--c-safron);
+}
+
+/* CTA Button */
+.navbar__cta {
+  padding: var(--space-3) var(--space-5);
+  background: var(--c-saffron);
+  color: var(--c-carbon);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--transition-normal), transform var(--transition-fast);
+}
+
+.navbar__cta:hover {
+  background: #d3a309;
+  transform: translateY(-2px);
+}
