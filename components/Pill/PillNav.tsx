@@ -13,8 +13,6 @@ export type PillNavItem = {
 };
 
 export interface PillNavProps {
-  // logo: StaticImageData | string;
-  // logoAlt?: string;
   items: PillNavItem[];
   activeHref?: string;
   className?: string;
@@ -28,15 +26,14 @@ export interface PillNavProps {
 }
 
 const PillNav: React.FC<PillNavProps> = ({
-  // logo,
-  // logoAlt = 'Logo',
+
   items,
   activeHref,
   className = '',
   ease = 'power3.easeOut',
-  baseColor = '#F8F9FA',
-  pillColor = '#060010',
-  hoveredPillTextColor = '#495057',
+  baseColor = '#212529',
+  pillColor = '#212529',
+  hoveredPillTextColor = '#212529',
   pillTextColor,
   onMobileMenuClick,
   initialLoadAnimation = true
@@ -46,12 +43,9 @@ const PillNav: React.FC<PillNavProps> = ({
   const circleRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const tlRefs = useRef<Array<gsap.core.Timeline | null>>([]);
   const activeTweenRefs = useRef<Array<gsap.core.Tween | null>>([]);
-  // const logoImgRef = useRef<HTMLImageElement | null>(null);
-  // const logoTweenRef = useRef<gsap.core.Tween | null>(null);
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const navItemsRef = useRef<HTMLDivElement | null>(null);
-  // const logoRef = useRef<HTMLAnchorElement | HTMLElement | null>(null);
 
   useEffect(() => {
     const layout = () => {
@@ -118,17 +112,7 @@ const PillNav: React.FC<PillNavProps> = ({
     }
 
     if (initialLoadAnimation) {
-      // const logo = logoRef.current;
       const navItems = navItemsRef.current;
-
-      // if (logo) {
-      //   gsap.set(logo, { scale: 0 });
-      //   gsap.to(logo, {
-      //     scale: 1,
-      //     duration: 0.6,
-      //     ease
-      //   });
-      // }
 
       if (navItems) {
         gsap.set(navItems, { width: 0, overflow: 'hidden' });
@@ -159,19 +143,6 @@ const PillNav: React.FC<PillNavProps> = ({
     if (!tl) return;
     activeTweenRefs.current[i]?.kill();
     activeTweenRefs.current[i] = tl.tweenTo(0, {
-      duration: 0.2,
-      ease,
-      overwrite: 'auto'
-    });
-  };
-
-  const handleLogoEnter = () => {
-    const img = logoImgRef.current;
-    if (!img) return;
-    logoTweenRef.current?.kill();
-    gsap.set(img, { rotate: 0 });
-    logoTweenRef.current = gsap.to(img, {
-      rotate: 360,
       duration: 0.2,
       ease,
       overwrite: 'auto'
@@ -229,15 +200,6 @@ const PillNav: React.FC<PillNavProps> = ({
     onMobileMenuClick?.();
   };
 
-  // const isExternalLink = (href: string) =>
-  //   href.startsWith('http://') ||
-  //   href.startsWith('https://') ||
-  //   href.startsWith('//') ||
-  //   href.startsWith('mailto:') ||
-  //   href.startsWith('tel:') ||
-  //   href.startsWith('#');
-
-  // const isRouterLink = (href?: string) => href && !isExternalLink(href);
 
   const isInternal = (href?: string) => {
   if (!href) return false;
@@ -255,32 +217,6 @@ const PillNav: React.FC<PillNavProps> = ({
   return (
     <div className="pill-nav-container">
       <nav className={`pill-nav ${className}`} aria-label="Primary" style={cssVars}>
-      {/* {isInternal(items?.[0]?.href) ? (
-      <Link
-        href={items[0].href}
-        className="pill-logo"
-        aria-label="Home"
-        onMouseEnter={handleLogoEnter}
-        ref={el => {
-              logoRef.current = el;
-            }}
-      >
-        <Image src={logo} alt={logoAlt} ref={logoImgRef} /> 
-      </Link>
-    ) : (
-      <a
-        href={items?.[0]?.href || '#'}
-        className="pill-logo"
-        aria-label="Home"
-        onMouseEnter={handleLogoEnter}
-        ref={el => {
-              logoRef.current = el;
-            }}
-      >
-        <Image src={logo} alt={logoAlt} ref={logoImgRef} />
-      </a>
-)} */}
-
         <div className="pill-nav-items desktop-only" ref={navItemsRef}>
           <ul className="pill-list" role="menubar">
             {items.map((item, i) => (
@@ -288,7 +224,6 @@ const PillNav: React.FC<PillNavProps> = ({
                 {isInternal(item.href) ? (
                   <Link
                     role="menuitem"
-                    // to={item.href}
                     href={item.href}
                     className={`pill${activeHref === item.href ? ' is-active' : ''}`}
                     aria-label={item.ariaLabel || item.label}

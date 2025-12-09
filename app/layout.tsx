@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 // import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import PillNav from "@/components/Pill/PillNav";
-import logo from "@/public/logo.png";
-
+import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "Royal Fade Barbers",
@@ -21,7 +20,7 @@ export default function RootLayout({
       <body
       >
         {/* <Marquee /> */}
-        {/* <Navbar />  */}
+        <Navbar /> 
         <PillNav
           // logo={logo}
           // logoAlt="Company Logo"
@@ -35,10 +34,10 @@ export default function RootLayout({
           activeHref="/"
           className="custom-nav"
           ease="power2.easeOut"
-          baseColor="#000000"
-          pillColor="#ffffff"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#000000"
+          baseColor="#212529"
+          pillColor="#212529"
+          hoveredPillTextColor="#212529"
+          pillTextColor="#212529"
         />
         {children}
       </body>
