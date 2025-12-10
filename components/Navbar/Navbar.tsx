@@ -14,9 +14,10 @@ export default function Navbar() {
             <Image
             src="/images/logo-final.png"
             alt="Royal Fade Barbers Logo"
-            width={230}
+            width={240}
             height={70}
             priority
+            className="logo__img"
             />
         </Link>
 

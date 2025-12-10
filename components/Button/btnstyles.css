@@ -8,13 +8,12 @@
   cursor: pointer;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--c-carbon);
-  color: var(--c-saffron);
+  background-color: var(--c-snow);
+  color: var(--c-carbon);
   border-radius: 9999;
   font-size: var(--font-size-reg);
   font-weight: var(--font-weight-medium);
-  padding: var(--space-2) var(--space-10);
-  padding-left: 20px;
+  padding: var(--space-1) var(--space-6);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -27,7 +26,7 @@
   height: 30px;
   position: relative;
   color: var(--c-carbon);
-  background-color: var(--c-snow);
+  background-color: var(--c-saffron);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -43,6 +42,7 @@
   color: var(--c-carbon);
   width: 32px;
   height: 32px;
+  background-color: var(--c-snow);
 }
 
 .button__icon-svg--copy {

@@ -61,8 +61,8 @@
   justify-content: center;
   height: 100%;
   padding: 0 var(--space-8);
-  background: var(--c-snow);
-  color: var(--c-carbon);
+  background: var(--c-iron);
+  color: var(--c-snow);
   text-decoration: none;
   border-radius: 9999px;
   box-sizing: border-box;
